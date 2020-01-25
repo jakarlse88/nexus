@@ -6,8 +6,29 @@
     <meta name="viewport" content="width=device-width" />
     <title>Nexus</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|PT+Sans+Narrow&display=swap" rel="stylesheet">
+
+    <!-- Normalize CSS -->
+    <link href="css/normalize.css" rel="stylesheet" />
+
+    <!-- Site CSS -->
     <link href="css/site.css" rel="stylesheet" />
+
+    <!-- Particles.js -->
+    <script src="./js/particles.js"></script>
+
+    <!-- JS Interop -->
+    <!-- <script>
+        window.particlesLoad = function(element) {
+            particlesJS.load(element, './js/particlesjs-config.json', function() {
+                console.load('particles particle-ing');
+            });
+        }
+    </script> -->
+
 </head>
 
 <body>
@@ -18,7 +39,9 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
     <script src="_framework/blazor.webassembly.js"></script>
+
 </body>
 
 </html>
