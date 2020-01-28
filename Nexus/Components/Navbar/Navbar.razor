@@ -1,0 +1,35 @@
+@inherits NavbarBase
+
+<nav class="navbar">
+        <a href="/" class="navbar__header">
+        <h2 class="navbar__brand">
+            @_brandTitle
+            </h2>
+    </a>
+    
+    <div class="navbar__body">
+    
+        <ul class="navbar__links">
+            
+            <li>
+                <a class="navbar__link-item" @ref="_about" @onclick="@ScrollToSection">About</a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a class="navbar__link-item" href="#SkillSection">Skills</a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a class="navbar__link-item" href="#WorkSection">Work</a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a class="navbar__link-item" href="#ContactSection">Contact</a>
+            </li>    
+
+        </ul>
+
+    </div>
+
+</nav>
+

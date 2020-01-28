@@ -8,6 +8,101 @@
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+:root {
+    --pink: #cd2faa;
+    --light-blue: #23cddb;
+    --dark-blue: #188ddd;
+}
+
+.section-placeholder {
+    height: 100vh;
+    width: 100vw;
+    background-color: grey;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.section-placeholder:nth-of-type(odd)
+{
+    background-color: white;
+}
+
+/*
+ *
+ * Spinkit
+ * https://tobiasahlin.com/spinkit/
+ *
+ */
+ 
+ .sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 300px auto;
+  }
+  
+  .sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+            animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+  }
+  .sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s; }
+  .sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; }
+  .sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1); 
+    }
+  }
+  
+  @keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1);
+    } 
+  }
+
 /*
  *
  * Blazor Error UI
@@ -33,6 +128,65 @@
     top: 0.5rem;
 }
 
+/*
+ *
+ * Navbar
+ * 
+ */
+
+.navbar {
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar__header {
+    margin-left: 2em;
+    width: 50vw;
+    justify-self: flex-start;
+}
+
+.navbar__brand {
+    margin: 0;
+    font-size: 2em;
+    color: whitesmoke;
+    font-family: 'Megrim', cursive;
+}
+
+.navbar__body {
+    width: 50vw;
+    margin-right: 2em;
+}
+
+.navbar__links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar__links li {
+    display: inline-block;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.navbar__link-item:hover {
+    cursor: pointer;
+    color: var(--dark-blue);
+}
+
+.navbar__link-item {
+    text-decoration: none;
+    color: whitesmoke;
+    margin: auto 1em;
+}
+
  /*
  *
  * Hero
@@ -49,7 +203,8 @@
      max-width: 100%;
      background-image: url("../media/images/hero-bg-alt.jpg");
      background-size: cover;
-     background-position: center;
+     background-position: center 66%;
+     background-color: black;
  }
 
  .hero:before {
@@ -61,6 +216,7 @@
     left: 0;
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,0.66) 33%, rgba(0,0,0,0.33) 66%, rgba(0,212,255,0) 100%);
     opacity: .6;
+    pointer-events: none;
  }
 
  .hero__title {
