@@ -1,12 +1,12 @@
-using System.Threading.Tasks;
+// using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
+// using Microsoft.JSInterop;
 
 namespace Nexus.Components
 {
     public class NavbarBase : ComponentBase 
     {
-        private readonly IJSRuntime _jsRuntime;
+        // private readonly IJSRuntime _jsRuntime;
         protected readonly string _lambda;
         protected readonly string _brandTitle;
         protected ElementReference _about;
@@ -16,15 +16,15 @@ namespace Nexus.Components
             _brandTitle = "Jon Karlsen";
         }
 
-        public NavbarBase(IJSRuntime jsRuntime)
-        {
-            _brandTitle = "Jon Karlsen";
-            _jsRuntime = jsRuntime;
-        }
+        // public NavbarBase(IJSRuntime jsRuntime)
+        // {
+        //     _brandTitle = "Jon Karlsen";
+        //     _jsRuntime = jsRuntime;
+        // }
 
-        protected async Task ScrollToSection()
-        {
-            await _jsRuntime.InvokeVoidAsync("linkToPageSection", _about);
-        }
+        // public async Task ScrollToSection()
+        // {
+        //     await _jsRuntime.InvokeVoidAsync("linkToPageSection");
+        // }
     }
 }
