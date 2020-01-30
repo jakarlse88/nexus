@@ -1,0 +1,67 @@
+@inherits NavbarBase
+@inject IJSRuntime JSRuntime
+
+<nav class="navbar navbar-hidden">
+        <a href="/" class="navbar__header">
+        <h2 class="navbar__brand">
+            @_brandTitle
+            </h2>
+    </a>
+    
+    <div class="navbar__body">
+    
+        <ul class="navbar__links">
+            
+            <li>
+                <a 
+                    class="navbar__link-item"
+                    @onclick="ScrollToAboutSection">
+                    About
+                </a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a 
+                    class="navbar__link-item"
+                    @onclick="ScrollToSkillSection">
+                    Skills
+                </a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a
+                    class="navbar__link-item"
+                    @onclick="ScrollToWorkSection">
+                    Work
+                </a>
+            </li>
+            
+            <li class="navbar__link-item">
+                <a
+                    class="navbar__link-item"
+                    @onclick="ScrollToContactSection">
+                    Contact
+                </a>
+            </li>    
+
+        </ul>
+
+    </div>
+
+</nav>
+
+@code {
+    public async Task ScrollToAboutSection() => await ScrollToSection("#AboutSection");
+
+    public async Task ScrollToSkillSection() => await ScrollToSection("#SkillSection");
+
+    public async Task ScrollToWorkSection() => await ScrollToSection("#WorkSection");
+
+    public async Task ScrollToContactSection() => await ScrollToSection("#ContactSection");
+
+    private async Task ScrollToSection(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("linkToPageSection", sectionId);
+    }
+    
+}
