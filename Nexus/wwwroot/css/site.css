@@ -178,9 +178,13 @@
   transition: opacity 1.4s;
 }
 
-.sticky+.content {
+.content-padding > #AboutSection,
+.content-padding > #SkillSection,
+.content-padding > #WorkSection,
+.content-padding > #ContactSection {
   padding-top: 8vh;
 }
+
 
 .navbar a {
   text-decoration: none;
