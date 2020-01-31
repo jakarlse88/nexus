@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using Nexus.Server.Model;
 using Nexus.Server.Repositories;
 using Nexus.Server.Services;
@@ -52,7 +53,10 @@ namespace Nexus.Server
                 options
                     .WithOrigins("http://localhost:5000",
                         "https://localhost:5001")
-                    .AllowAnyMethod());
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .WithHeaders(HeaderNames.AccessControlAllowOrigin, "*")
+                );
 
             app.UseAuthorization();
 

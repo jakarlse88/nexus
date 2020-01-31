@@ -14,13 +14,16 @@ namespace Nexus.Client.Components
         protected override async Task OnInitializedAsync()
         {
             AboutSectionData = 
-                await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/personaldetails/1");
+                await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/api/personaldetails/1");
         }
     }
 
     public class AboutSectionData
     {
-        public string Heading { get; set; }
-        public string Text { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string JobTitle { get; set; }
+        public string Biography { get; set; }
     }
 }
