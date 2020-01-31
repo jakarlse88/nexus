@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nexus.Server.Services;
@@ -18,6 +18,7 @@ namespace Nexus.Server.Controllers
         }
 
         // GET: /api/personal-details
+        [EnableCors]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -36,6 +37,5 @@ namespace Nexus.Server.Controllers
 
             return NotFound();
         }
-        // TODO: tests!
     }
 }

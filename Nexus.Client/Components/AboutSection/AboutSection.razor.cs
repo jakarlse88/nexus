@@ -14,7 +14,7 @@ namespace Nexus.Client.Components
         protected override async Task OnInitializedAsync()
         {
             AboutSectionData = 
-                await HttpClient.GetJsonAsync<AboutSectionData>("sample-data/AboutSection.json");
+                await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/personaldetails/1");
         }
     }
 

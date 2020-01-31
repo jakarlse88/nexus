@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Nexus.Server.Model
+﻿namespace Nexus.Server.Model
 {
     public partial class PersonalDetails : EntityBase
     {

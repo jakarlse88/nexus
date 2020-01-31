@@ -8,6 +8,8 @@ using Nexus.Server.Model;
 using Nexus.Server.Repositories;
 using Nexus.Server.Services;
 
+// ReSharper disable ConvertToUsingDeclaration
+
 namespace Nexus.Server
 {
     public class Startup
@@ -17,7 +19,7 @@ namespace Nexus.Server
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -35,6 +37,8 @@ namespace Nexus.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            UpdateDatabase(app);
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -44,9 +48,28 @@ namespace Nexus.Server
 
             app.UseRouting();
 
+            app.UseCors(options =>
+                options
+                    .WithOrigins("http://localhost:5000",
+                        "https://localhost:5001")
+                    .AllowAnyMethod());
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
+        
+        private static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<NexusContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
     }
 }

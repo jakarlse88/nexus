@@ -5,6 +5,7 @@ using Nexus.Server.Repositories;
 using Nexus.Server.Services;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
+
 // ReSharper disable ConvertToUsingDeclaration
 
 namespace Nexus.Test
@@ -18,7 +19,7 @@ namespace Nexus.Test
             var options = TestUtilities.BuildTestDbOptions();
 
             IActionResult result;
-            
+
             await using (var context = new NexusContext(options))
             {
                 var repositoryWrapper = new RepositoryWrapper(context);
@@ -44,13 +45,13 @@ namespace Nexus.Test
             var options = TestUtilities.BuildTestDbOptions();
 
             IActionResult result;
-            
+
             await using (var context = new NexusContext(options))
             {
                 context.Database.EnsureCreated();
-                
+
                 TestUtilities.SeedTestDb(context);
-                
+
                 var repositoryWrapper = new RepositoryWrapper(context);
 
                 var service = new PersonalDetailsService(repositoryWrapper);
@@ -74,13 +75,13 @@ namespace Nexus.Test
             var options = TestUtilities.BuildTestDbOptions();
 
             IActionResult result;
-            
+
             await using (var context = new NexusContext(options))
             {
                 context.Database.EnsureCreated();
-                
+
                 TestUtilities.SeedTestDb(context);
-                
+
                 var repositoryWrapper = new RepositoryWrapper(context);
 
                 var service = new PersonalDetailsService(repositoryWrapper);
@@ -98,6 +99,5 @@ namespace Nexus.Test
             var entity = Assert.IsAssignableFrom<PersonalDetails>(objectResult.Value);
             Assert.Equal("Jon", entity.FirstName);
         }
-
     }
 }

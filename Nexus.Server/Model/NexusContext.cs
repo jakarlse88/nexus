@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Nexus.Server.Model
 {
@@ -21,8 +19,9 @@ namespace Nexus.Server.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=Lenovo-310\\SQLEXPRESS;Initial Catalog=Nexus;Integrated Security=True");
+                #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http: //go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer(
+                    "Data Source=Lenovo-310\\SQLEXPRESS;Initial Catalog=Nexus;Integrated Security=True");
             }
         }
 
