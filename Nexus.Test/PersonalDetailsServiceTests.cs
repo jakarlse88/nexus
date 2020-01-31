@@ -1,13 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Nexus.Server.Model;
 using Nexus.Server.Repositories;
+using Nexus.Server.Services;
 using Xunit;
-
-// ReSharper disable ConvertToUsingDeclaration
 
 namespace Nexus.Test
 {
-    public class PersonalDetailsRepositoryTests
+    public class PersonalDetailsServiceTests
     {
         private static void SeedTestDb(NexusContext context)
         {
@@ -23,7 +22,7 @@ namespace Nexus.Test
 
             context.SaveChanges();
         }
-
+        
         [Fact]
         public async Task TestGetByIdAsyncIdInvalid()
         {
@@ -31,19 +30,19 @@ namespace Nexus.Test
             var options = TestUtilities.BuildTestDbOptions();
 
             PersonalDetails result;
-
+            
             await using (var context = new NexusContext(options))
             {
                 context.Database.EnsureCreated();
 
                 SeedTestDb(context);
 
-                var repository = new PersonalDetailsRepository(context);
+                var repositoryWrapper = new RepositoryWrapper(context);
 
-                Assert.Single(context.PersonalDetails);
-
+                var service = new PersonalDetailsService(repositoryWrapper);
+                
                 // Act
-                result = await repository.GetByIdAsync(2);
+                result = await service.GetByIdAsync(2);
 
                 context.Database.EnsureDeleted();
             }
@@ -59,23 +58,23 @@ namespace Nexus.Test
             var options = TestUtilities.BuildTestDbOptions();
 
             PersonalDetails result;
-
+            
             await using (var context = new NexusContext(options))
             {
                 context.Database.EnsureCreated();
 
                 SeedTestDb(context);
 
-                var repository = new PersonalDetailsRepository(context);
+                var repositoryWrapper = new RepositoryWrapper(context);
 
-                Assert.Single(context.PersonalDetails);
-
+                var service = new PersonalDetailsService(repositoryWrapper);
+                
                 // Act
-                result = await repository.GetByIdAsync(1);
+                result = await service.GetByIdAsync(1);
 
                 context.Database.EnsureDeleted();
             }
-
+            
             // Assert
             Assert.NotNull(result);
             Assert.IsAssignableFrom<PersonalDetails>(result);
