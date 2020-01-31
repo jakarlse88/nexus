@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Nexus.Server.Model
+﻿namespace Nexus.Server.Model
 {
-    public partial class Person
+    // ReSharper disable once ClassNeverInstantiated.Global
+    public partial class PersonalDetails : EntityBase
     {
-        public int Id { get; set; }
+        public override int Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
