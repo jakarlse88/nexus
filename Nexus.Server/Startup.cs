@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Nexus.Server.Model;
 using Nexus.Server.Repositories;
+using Nexus.Server.Services;
 
 namespace Nexus.Server
 {
@@ -27,6 +28,8 @@ namespace Nexus.Server
                 options.UseSqlServer(Configuration.GetConnectionString("NexusReferential")));
 
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
+            services.AddScoped<IPersonalDetailsService, PersonalDetailsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

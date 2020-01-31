@@ -32,27 +32,21 @@ namespace Nexus.Server.Model
             {
                 entity.Property(e => e.Biography)
                     .IsRequired()
-                    .HasMaxLength(1000)
-                    .IsFixedLength();
+                    .HasMaxLength(1000);
 
                 entity.Property(e => e.FirstName)
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.JobTitle)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength();
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.LastName)
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                    .HasMaxLength(20);
 
-                entity.Property(e => e.MiddleName)
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                entity.Property(e => e.MiddleName).HasMaxLength(20);
             });
 
             OnModelCreatingPartial(modelBuilder);

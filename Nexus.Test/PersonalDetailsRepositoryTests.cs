@@ -9,21 +9,6 @@ namespace Nexus.Test
 {
     public class PersonalDetailsRepositoryTests
     {
-        private static void SeedTestDb(NexusContext context)
-        {
-            context.PersonalDetails.Add(
-                new PersonalDetails
-                {
-                    Id = 1,
-                    FirstName = "Jon",
-                    LastName = "Karlsen",
-                    Biography = "Once upon a time",
-                    JobTitle = "Back-End Web Dev"
-                });
-
-            context.SaveChanges();
-        }
-
         [Fact]
         public async Task TestGetByIdAsyncIdInvalid()
         {
@@ -36,7 +21,7 @@ namespace Nexus.Test
             {
                 context.Database.EnsureCreated();
 
-                SeedTestDb(context);
+                TestUtilities.SeedTestDb(context);
 
                 var repository = new PersonalDetailsRepository(context);
 
@@ -64,7 +49,7 @@ namespace Nexus.Test
             {
                 context.Database.EnsureCreated();
 
-                SeedTestDb(context);
+                TestUtilities.SeedTestDb(context);
 
                 var repository = new PersonalDetailsRepository(context);
 
