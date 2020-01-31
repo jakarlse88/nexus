@@ -1,0 +1,63 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+
+namespace Nexus.Server.Model
+{
+    public partial class NexusContext : DbContext
+    {
+        public NexusContext()
+        {
+        }
+
+        public NexusContext(DbContextOptions<NexusContext> options)
+            : base(options)
+        {
+        }
+
+        public virtual DbSet<Person> Person { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Data Source=Lenovo-310\\SQLEXPRESS;Initial Catalog=Nexus;Integrated Security=True");
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Person>(entity =>
+            {
+                entity.Property(e => e.Biography)
+                    .IsRequired()
+                    .HasMaxLength(1000)
+                    .IsFixedLength();
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.JobTitle)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsFixedLength();
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MiddleName)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+            });
+
+            OnModelCreatingPartial(modelBuilder);
+        }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    }
+}
