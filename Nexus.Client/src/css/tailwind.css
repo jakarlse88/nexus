@@ -1,7 +1,9 @@
+/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+/* purgecss end ignore */
 @tailwind utilities;
- 
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -23,4 +25,13 @@
 
 .navbar-link:hover {
     cursor: pointer;
+}
+
+.hero {
+    background-image:
+        url("../media/images/fabian-grohs-dC6Pb2JdAqs-unsplash.jpg"),
+        linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
 }

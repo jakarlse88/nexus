@@ -1,9 +1,8 @@
 @inherits NavbarBase
-@inject IJSRuntime JSRuntime
 
 
-<nav class="container mx-auto px-6 py-2 flex justify-between items-center fixed bg-white">
-    <a href="/" class="font-bold text-2xl lg:text-4xl">
+<nav class="mx-auto px-6 py-2 flex justify-between items-center w-screen fixed bg-white">
+    <a href="/" class="font-handwriting text-black font-bold text-2xl lg:text-4xl">
         <h2>@NavbarHeading</h2>
     </a>
 
@@ -15,6 +14,7 @@
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
             </svg>
         </button>
+
     </div>
 
     <div class="hidden lg:block">
@@ -23,28 +23,28 @@
 
             <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    @onclick="@ScrollToAboutSection">
+                    @onclick="@(() => ScrollToSection("#AboutSection"))">
                     About
                 </a>
             </li>
 
             <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    @onclick="@ScrollToSkillSection">
+                    @onclick="@(() => ScrollToSection("#SkillSection"))">
                     Skills
                 </a>
             </li>
 
             <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    @onclick="@ScrollToWorkSection">
+                    @onclick="@(() => ScrollToSection("#WorkSection"))">
                     Work
                 </a>
             </li>
 
             <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    @onclick="@ScrollToContactSection">
+                    @onclick="@(() => ScrollToSection("#ContactSection"))">
                     Contact
                 </a>
             </li>
@@ -54,19 +54,3 @@
     </div>
 
 </nav>
-
-@code {
-    public async Task ScrollToAboutSection() => await ScrollToSection("#AboutSection");
-
-    public async Task ScrollToSkillSection() => await ScrollToSection("#SkillSection");
-
-    public async Task ScrollToWorkSection() => await ScrollToSection("#WorkSection");
-
-    public async Task ScrollToContactSection() => await ScrollToSection("#ContactSection");
-
-    // private async Task ScrollToSection(string sectionId)
-    // {
-    //     await JSRuntime.InvokeVoidAsync("linkToPageSection", sectionId);
-    // }
-
-}

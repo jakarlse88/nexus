@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -6,25 +7,24 @@ namespace Nexus.Client.Components
 {
     public class HeroBase : ComponentBase
     {
-        private readonly IJSRuntime _jsRuntime;
-        public ElementReference _particles { get; set; }
-        public string Title = "Jon Karlsen";
-        public string Subtitle = "Developer // Black Belt";
+        [Inject] private IJSRuntime JsRuntime { get; set; }
+        
+        protected const string StaticText = "I design and develop fantastic web applications using ";
 
-        public HeroBase()
+        protected async Task ScrollToSection(string sectionId)
         {
+            await JsRuntime
+                .InvokeVoidAsync(
+                    "linkToPageSection",
+                    sectionId);
         }
-
-        public HeroBase(IJSRuntime jsRuntime)
+        
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            _jsRuntime = jsRuntime;
+            if (firstRender)
+            {
+                await JsRuntime.InvokeVoidAsync("initTyped");
+            }
         }
-
-        // protected override async Task OnAfterRenderAsync(bool firstRender){
-        //     if (firstRender)
-        //     {
-        //         await _jsRuntime.InvokeVoidAsync("particlesLoad", _particles);
-        //     }
-        // }
     }
 }

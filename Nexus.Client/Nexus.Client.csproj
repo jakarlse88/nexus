@@ -18,4 +18,8 @@
     <_ContentIncludedByDefault Remove="Components\Navbar\NavbarLinkElement\NavbarLinkElement.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\media\svg" />
+  </ItemGroup>
+
 </Project>

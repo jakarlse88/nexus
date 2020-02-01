@@ -1,6 +1,27 @@
 @inherits HeroBase
 
-<header class="hero" @ref="_particles">
-    <h1 class="hero__title">@Title</h1>
-    <p class="hero__sub-title">@Subtitle</p>
-</header>
+<section class="py-20 px-20 h-screen flex items-stretch hero">
+
+    <div class="container mx-auto w-1/2 flex flex-col align-start justify-center">
+
+        <p class="text-xl text-white text-center">
+            @StaticText <br/>
+            <span class="font-mono text-3xl" id="typed"></span>
+        </p>
+
+        <div class="full-w flex justify-center my-20">
+
+            <button @onclick="@(() => ScrollToSection("#ContactSection"))" class="bg-white hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 mx-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+                Contact Me
+            </button>
+
+
+            <button @onclick="@(() => ScrollToSection("#WorkSection"))" class="bg-white hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 mx-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+                Work / Resume
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
