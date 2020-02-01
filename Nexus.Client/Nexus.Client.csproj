@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.1.0-preview4.19579.2" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Navbar\NavbarLinkElement\NavbarLinkElement.razor" />
+  </ItemGroup>
+
 </Project>

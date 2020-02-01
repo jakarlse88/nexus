@@ -1,33 +1,26 @@
-// using System.Threading.Tasks;
-
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-
-// using Microsoft.JSInterop;
+using Microsoft.JSInterop;
 
 // ReSharper disable once CheckNamespace
 namespace Nexus.Client.Components
 {
-    public class NavbarBase : ComponentBase 
+    public class NavbarBase : ComponentBase
     {
-        // private readonly IJSRuntime _jsRuntime;
-        protected readonly string _lambda;
-        protected readonly string _brandTitle;
-        protected ElementReference _about;
-
+        [Inject] private IJSRuntime JsRuntime { get; set; }
+        protected string NavbarHeading { get; }
+        
         public NavbarBase()
         {
-            _brandTitle = "Jon Karlsen";
+            NavbarHeading = "Jon Karlsen";
         }
-
-        // public NavbarBase(IJSRuntime jsRuntime)
-        // {
-        //     _brandTitle = "Jon Karlsen";
-        //     _jsRuntime = jsRuntime;
-        // }
-
-        // public async Task ScrollToSection()
-        // {
-        //     await _jsRuntime.InvokeVoidAsync("linkToPageSection");
-        // }
+        
+        protected async Task ScrollToSection(string sectionId)
+        {
+            await JsRuntime
+                .InvokeVoidAsync(
+                    "linkToPageSection",
+                    sectionId);
+        }
     }
 }
