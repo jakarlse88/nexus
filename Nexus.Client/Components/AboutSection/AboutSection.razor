@@ -1,6 +1,6 @@
 @inherits AboutSectionBase
 
-<div class="container" id="AboutSection">
-    <h2>@AboutSectionData?.JobTitle</h2>
-    <p>@AboutSectionData?.Biography</p>
+<div class="container" id="AboutSection" style="height: 100vh;">
+    <h2>@AboutSectionData?.JobTitle ?? "Web Developer"</h2>
+    <p>@AboutSectionData?.Biography ?? "Error."</p>
 </div>

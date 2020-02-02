@@ -1,29 +1,35 @@
 window.linkToPageSection = function(elementId) {
     let element = document.querySelector(`${elementId}`);
+    console.log(elementId);
+    console.log(element);
     
     element.scrollIntoView();
-}
+};
 
-window.onscroll = () => stickyHeader();
+window.initTyped = function() {
+    const options = {
+        strings: [
+            ".NET Core",
+            "Entity Framework Core",
+            ".NET Core Identity",
+            ".NET Core MVC",
+            "SQL Server",
+            ".NET Core Web API",
+            "React.js",
+            ".NET Core Blazor"
+        ],
+        shuffle: true,
+        typeSpeed: 60,
+        loop: true,
+        loopCount: Infinity,
+        showCursor: true,
+        cursorChar: '|',
+        smartBackspace: true,
+        startDelay: 650,
+        backSpeed: 60
+    };
+    
+    const Typed = window.Typed;
 
-stickyHeader = function() {
-    let navbar = document.querySelector(".navbar");
-    let content = document.querySelector(".content");
-
-    // let sticky = navbar.offsetTop;
-
-    if (window.pageYOffset >= 400)
-    {
-        navbar.classList.add('navbar-sticky');
-        content.classList.add("content-padding");
-        
-        console.log('sticky');
-    } 
-    else 
-    {
-        navbar.classList.remove('navbar-sticky');        
-        content.classList.remove("content-padding");
-
-        console.log('slippery');
-    }
-}
+    const typed = new Typed("#typed", options);
+};

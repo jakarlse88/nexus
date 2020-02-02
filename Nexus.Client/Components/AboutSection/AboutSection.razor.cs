@@ -11,11 +11,11 @@ namespace Nexus.Client.Components
         private HttpClient HttpClient { get; set; }
         protected AboutSectionData AboutSectionData { get; set; }
 
-        protected override async Task OnInitializedAsync()
-        {
-            AboutSectionData = 
-                await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/api/personaldetails/1");
-        }
+        // protected override async Task OnInitializedAsync()
+        // {
+        //     AboutSectionData = 
+        //         await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/api/personaldetails/1");
+        // }
     }
 
     public class AboutSectionData

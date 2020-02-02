@@ -8,31 +8,20 @@
     <base href="/" />
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Megrim|PT+Sans+Narrow&display=swap" rel="stylesheet">
-
-    <!-- Normalize CSS -->
-    <link href="css/normalize.css" rel="stylesheet" asp-append-version="true"/>
+    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
     <!-- Site CSS -->
-    <link href="css/tailwind.css" rel="stylesheet" asp-append-version="true"/>
+    <link href="css/tailwind.css" rel="stylesheet"/>
 
-    <!-- Particles.js -->
-    <script src="./js/particles.js"></script>
-
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    
     <!-- JS Interop -->
-    <script src="js/site.js" asp-append-version="true"></script>
-    <!-- <script>
-        window.particlesLoad = function(element) {
-            particlesJS.load(element, './js/particlesjs-config.json', function() {
-                console.load('particles particle-ing');
-            });
-        }
-    </script> -->
-
+    <script src="js/site.js" type="module" ></script>
+    
 </head>
 
-<body >
+<body class="text-gray-700 bg-white">
     <app>
         <div class="sk-cube-grid">
             <div class="sk-cube sk-cube1"></div>
@@ -53,6 +42,7 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    
     <script src="_framework/blazor.webassembly.js"></script>
 
 </body>

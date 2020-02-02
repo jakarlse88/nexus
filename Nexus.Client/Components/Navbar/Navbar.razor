@@ -1,67 +1,56 @@
 @inherits NavbarBase
-@inject IJSRuntime JSRuntime
 
-<nav class="navbar navbar-hidden">
-        <a href="/" class="navbar__header">
-        <h2 class="navbar__brand">
-            @_brandTitle
-            </h2>
+
+<nav class="mx-auto px-6 py-2 flex justify-between items-center w-screen fixed bg-white">
+    <a href="/" class="font-handwriting text-black font-bold text-2xl lg:text-4xl">
+        <h2>@NavbarHeading</h2>
     </a>
-    
-    <div class="navbar__body">
-    
-        <ul class="navbar__links">
-            
-            <li>
-                <a 
-                    class="navbar__link-item"
-                    @onclick="ScrollToAboutSection">
+
+    <div class="block lg:hidden">
+
+        <button class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:border-teal-500 appearance-none focus:outline-none">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <div class="hidden lg:block">
+
+        <ul class="inline-flex">
+
+            <li class="px-4 hover:text-gray-800 navbar-link">
+                <a
+                    @onclick="@(() => ScrollToSection("#AboutSection"))">
                     About
                 </a>
             </li>
-            
-            <li class="navbar__link-item">
-                <a 
-                    class="navbar__link-item"
-                    @onclick="ScrollToSkillSection">
+
+            <li class="px-4 hover:text-gray-800 navbar-link">
+                <a
+                    @onclick="@(() => ScrollToSection("#SkillSection"))">
                     Skills
                 </a>
             </li>
-            
-            <li class="navbar__link-item">
+
+            <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    class="navbar__link-item"
-                    @onclick="ScrollToWorkSection">
+                    @onclick="@(() => ScrollToSection("#WorkSection"))">
                     Work
                 </a>
             </li>
-            
-            <li class="navbar__link-item">
+
+            <li class="px-4 hover:text-gray-800 navbar-link">
                 <a
-                    class="navbar__link-item"
-                    @onclick="ScrollToContactSection">
+                    @onclick="@(() => ScrollToSection("#ContactSection"))">
                     Contact
                 </a>
-            </li>    
-
+            </li>
+    
         </ul>
 
     </div>
 
 </nav>
-
-@code {
-    public async Task ScrollToAboutSection() => await ScrollToSection("#AboutSection");
-
-    public async Task ScrollToSkillSection() => await ScrollToSection("#SkillSection");
-
-    public async Task ScrollToWorkSection() => await ScrollToSection("#WorkSection");
-
-    public async Task ScrollToContactSection() => await ScrollToSection("#ContactSection");
-
-    private async Task ScrollToSection(string sectionId)
-    {
-        await JSRuntime.InvokeVoidAsync("linkToPageSection", sectionId);
-    }
-    
-}
