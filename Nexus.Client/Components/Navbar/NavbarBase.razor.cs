@@ -15,7 +15,7 @@ namespace Nexus.Client.Components
             NavbarHeading = "Jon Karlsen";
         }
         
-        protected async Task ScrollToSection(string sectionId)
+        public async Task ScrollToSection(string sectionId)
         {
             await JsRuntime
                 .InvokeVoidAsync(

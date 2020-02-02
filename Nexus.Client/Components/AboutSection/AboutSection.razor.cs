@@ -7,8 +7,7 @@ namespace Nexus.Client.Components
 {
     public class AboutSectionBase : ComponentBase
     {
-        [Inject] 
-        private HttpClient HttpClient { get; set; }
+        [Inject] private HttpClient HttpClient { get; set; }
         protected AboutSectionData AboutSectionData { get; set; }
 
         // protected override async Task OnInitializedAsync()

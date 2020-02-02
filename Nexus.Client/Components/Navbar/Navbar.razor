@@ -1,7 +1,7 @@
 @inherits NavbarBase
 
-
 <nav class="mx-auto px-6 py-2 flex justify-between items-center w-screen fixed bg-white">
+    
     <a href="/" class="font-handwriting text-black font-bold text-2xl lg:text-4xl">
         <h2>@NavbarHeading</h2>
     </a>
@@ -21,33 +21,29 @@
 
         <ul class="inline-flex">
 
-            <li class="px-4 hover:text-gray-800 navbar-link">
-                <a
-                    @onclick="@(() => ScrollToSection("#AboutSection"))">
-                    About
-                </a>
-            </li>
+            <NavbarLinkElement 
+                LinkText="About"
+                SectionLinkId="#AboutSection"
+                OnClick="@ScrollToSection"
+            />
 
-            <li class="px-4 hover:text-gray-800 navbar-link">
-                <a
-                    @onclick="@(() => ScrollToSection("#SkillSection"))">
-                    Skills
-                </a>
-            </li>
+            <NavbarLinkElement
+                LinkText="Skills"
+                SectionLinkId="#SkillSection"
+                OnClick="@ScrollToSection"
+             />
 
-            <li class="px-4 hover:text-gray-800 navbar-link">
-                <a
-                    @onclick="@(() => ScrollToSection("#WorkSection"))">
-                    Work
-                </a>
-            </li>
+            <NavbarLinkElement 
+                LinkText="Work"
+                SectionLinkId="#WorkSection"
+                OnClick="@ScrollToSection"
+            />
 
-            <li class="px-4 hover:text-gray-800 navbar-link">
-                <a
-                    @onclick="@(() => ScrollToSection("#ContactSection"))">
-                    Contact
-                </a>
-            </li>
+            <NavbarLinkElement 
+                LinkText="Contact"
+                SectionLinkId="#ContactSection"
+                OnClick="@ScrollToSection"
+            />
     
         </ul>
 
