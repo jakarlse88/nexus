@@ -14,9 +14,15 @@ window.initTyped = function() {
             ".NET Core Identity",
             ".NET Core MVC",
             "SQL Server",
+            "MS Server Management Studio",
             ".NET Core Web API",
             "React.js",
-            ".NET Core Blazor"
+            ".NET Core Blazor",
+            "JavaScript",
+            "HTML5",
+            "Bootstrap",
+            "TailwindCSS",
+            "CSS"
         ],
         shuffle: true,
         typeSpeed: 60,
