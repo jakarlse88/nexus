@@ -11,7 +11,7 @@ namespace Nexus.Client.Components
         
         protected const string StaticText = "I design and develop fantastic web applications using ";
 
-        protected async Task ScrollToSection(string sectionId)
+        public async Task ScrollToSection(string sectionId)
         {
             await JsRuntime
                 .InvokeVoidAsync(
