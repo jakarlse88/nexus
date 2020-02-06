@@ -20,4 +20,11 @@
       <ProjectReference Include="..\Nexus.Server\Nexus.Server.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\Nexus.Server\Assets\resume.pdf">
+        <Link>Assets\resume.pdf</Link>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

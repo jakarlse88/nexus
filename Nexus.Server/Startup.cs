@@ -8,6 +8,7 @@ using Microsoft.Net.Http.Headers;
 using Nexus.Server.Model;
 using Nexus.Server.Repositories;
 using Nexus.Server.Services;
+using Microsoft.OpenApi.Models;
 
 // ReSharper disable ConvertToUsingDeclaration
 
@@ -33,12 +34,20 @@ namespace Nexus.Server
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 
             services.AddScoped<IPersonalDetailsService, PersonalDetailsService>();
+            services.AddScoped<ILocalFileService, LocalFileService>();
+
+            services.AddSwaggerGen(c =>
+                c.SwaggerDoc("v0.1.0", new OpenApiInfo { Title = "Nexus API", Version = "v0.1.0" }) 
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            UpdateDatabase(app);
+//            UpdateDatabase(app);
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v0.1.0/swagger.json", "Nexus API v0.1.0"));
             
             if (env.IsDevelopment())
             {

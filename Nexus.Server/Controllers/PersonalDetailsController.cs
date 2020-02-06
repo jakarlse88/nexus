@@ -7,7 +7,7 @@ using Nexus.Server.Services;
 namespace Nexus.Server.Controllers
 {
     [ApiController]
-    [Route("api/personaldetails")]
+    [Route("api/[controller]")]
     public class PersonalDetailsController : ControllerBase
     {
         private readonly IPersonalDetailsService _personalDetailsService;
