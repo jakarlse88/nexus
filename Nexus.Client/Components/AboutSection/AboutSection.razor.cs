@@ -15,6 +15,11 @@ namespace Nexus.Client.Components
         //     AboutSectionData = 
         //         await HttpClient.GetJsonAsync<AboutSectionData>("https://localhost:5003/api/personaldetails/1");
         // }
+
+        protected async Task GetResumeFileFromServerAsync()
+        {
+            await HttpClient.GetAsync("https://localhost:5003/api/file/resume");
+        }
     }
 
     public class AboutSectionData

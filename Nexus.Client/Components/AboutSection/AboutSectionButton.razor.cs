@@ -7,12 +7,5 @@ namespace Nexus.Client.Components
     {
         [Parameter] public EventCallback OnClick { get; set; }
         [Parameter] public string ButtonText { get; set; }
-        [Parameter] public string Icon { get; set; }
-        protected string FontAwesomeIconString { get; set; }
-
-        public AboutSectionButtonBase()
-        {
-            FontAwesomeIconString = $"fas fa-{Icon}";
-        }
     }
 }
