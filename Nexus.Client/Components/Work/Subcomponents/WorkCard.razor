@@ -1,5 +1,4 @@
-﻿@inherits WorkSectionCardBase
-
+﻿
 <div class="max-w-sm worksection__card rounded overflow-hidden shadow-lg m-2">
 
     <img class="w-full h-48" src="@Image" alt="Sunset in the mountains">
@@ -24,18 +23,30 @@
 
     @if (TagOne != null)
     {
-        <WorkSectionCardTag TagText="@TagOne"/>
+        <WorkCardTag TagText="@TagOne"/>
     }
 
     @if (TagTwo != null)
     {
-        <WorkSectionCardTag TagText="@TagTwo"/>
+        <WorkCardTag TagText="@TagTwo"/>
     }
 
     @if (TagOne != null)
     {
-        <WorkSectionCardTag TagText="@TagThree"/>
+        <WorkCardTag TagText="@TagThree"/>
     }
 
 
 </div>
+
+@code {
+
+    [Parameter] public string Heading { get; set; }
+    [Parameter] public string Text { get; set; }
+    [Parameter] public string Image { get; set; }
+    [Parameter] public string GitHubProjectLink { get; set; }
+    [Parameter] public string TagOne { get; set; }
+    [Parameter] public string TagTwo { get; set; }
+    [Parameter] public string TagThree { get; set; }
+
+}
