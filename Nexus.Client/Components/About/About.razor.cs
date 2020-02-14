@@ -2,10 +2,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 
-// ReSharper disable once CheckNamespace
-namespace Nexus.Client.Components
+namespace Nexus.Client.Components.About
 {
-    public class AboutSectionBase : ComponentBase
+    public class AboutBase : ComponentBase
     {
         [Inject] private HttpClient HttpClient { get; set; }
         protected AboutSectionData AboutSectionData { get; set; }

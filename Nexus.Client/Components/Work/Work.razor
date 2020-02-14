@@ -1,5 +1,5 @@
-﻿@inherits WorkSectionBase
-@using Nexus.Client.Components.WorkSection.WorkSectionCard
+﻿@inherits WorkBase
+@using Nexus.Client.Components.Work.Subcomponents
 
 <section class="w-screen py-20 px-20 h-auto flex flex-col justify-between items-center" id="WorkSection">
     
@@ -9,7 +9,7 @@
     
         @for (int i = 0; i < 3; i++)
         {
-            <WorkSectionCard
+            <WorkCard
                 Heading="Heading"
                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 Image="https://via.placeholder.com/150"
@@ -22,4 +22,4 @@
         
     </div>
 
-</section>
+</section> 
