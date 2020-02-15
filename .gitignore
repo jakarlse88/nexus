@@ -1,1 +1,14 @@
+<<<<<<< Updated upstream
 DEPRECATED__Nexus/
+Nexus/Shared/obj/
+
+Nexus/Nexus.Test/obj/
+
+.idea/.idea.Nexus/
+=======
+DEPRECATED__Nexus/**/*
+Nexus/Shared/obj/
+.idea/**/*
+
+Nexus/Server/obj/
+>>>>>>> Stashed changes
