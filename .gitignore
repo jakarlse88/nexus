@@ -1,1 +1,6 @@
 DEPRECATED__Nexus/
+Nexus/Shared/obj/
+
+Nexus/Nexus.Test/obj/
+
+.idea/.idea.Nexus/
