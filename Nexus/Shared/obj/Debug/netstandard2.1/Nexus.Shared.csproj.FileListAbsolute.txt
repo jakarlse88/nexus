@@ -1,0 +1,8 @@
+C:\Users\Test\BlazorApp1\Nexus\Shared\bin\Debug\netstandard2.1\Nexus.Shared.deps.json
+C:\Users\Test\BlazorApp1\Nexus\Shared\bin\Debug\netstandard2.1\Nexus.Shared.dll
+C:\Users\Test\BlazorApp1\Nexus\Shared\bin\Debug\netstandard2.1\Nexus.Shared.pdb
+C:\Users\Test\BlazorApp1\Nexus\Shared\obj\Debug\netstandard2.1\Nexus.Shared.csprojAssemblyReference.cache
+C:\Users\Test\BlazorApp1\Nexus\Shared\obj\Debug\netstandard2.1\Nexus.Shared.AssemblyInfoInputs.cache
+C:\Users\Test\BlazorApp1\Nexus\Shared\obj\Debug\netstandard2.1\Nexus.Shared.AssemblyInfo.cs
+C:\Users\Test\BlazorApp1\Nexus\Shared\obj\Debug\netstandard2.1\Nexus.Shared.dll
+C:\Users\Test\BlazorApp1\Nexus\Shared\obj\Debug\netstandard2.1\Nexus.Shared.pdb
